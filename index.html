@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajat's Calender</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="renderDate()">
+    <div class="container">
+        <div class="calender">
+            <div class="top">
+                <img src="logo.png" alt="Logo" width="9%"">
+                <h3>&nbsp; Calender</h3>
+            </div>
+            <div class=" month">
+                <div class="prev" onclick="moveDate('prev')">&lt;</div>
+                <div>
+                    <h2 id="month"></h2>
+                    <p id="full_date"></p>
+                </div>
+                <div class="next" onclick="moveDate('next')">&gt;</div>
+            </div>
+            <div class="days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="dates">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
