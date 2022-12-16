@@ -41,7 +41,7 @@ function renderDate() {
   document.getElementsByClassName("dates")[0].innerHTML = cells;
 }
 
-function moveDate(args) {
+function moveMonth(args) {
   if (args == "prev") {
     date.setMonth(date.getMonth() - 1);
     renderDate();
@@ -51,6 +51,18 @@ function moveDate(args) {
   }
 }
 
+function moveYear(args) {
+  if (args == "prev") {
+    date.setFullYear(date.getFullYear() - 1);
+    renderDate();
+  } else if (args == "next") {
+    date.setFullYear(date.getFullYear() - 1);
+    renderDate();
+  }
+}
+
 function jumptoday() {
+  date =new Date();
+  date.setMonth(date.getMonth());
   renderDate();
 }
