@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+/* CSS for all outside area colour */
 body {
   background-color: gray;
 }
 
+/*CSS for main container box that holds div=calendar*/
 .container {
   display: flex;
   align-items: center;
@@ -15,11 +17,14 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
 .calendar {
   width: 400px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.6);
+  /* background-color: rgb(255, 255, 255); */
+  /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.6); */
 }
+
+/* top is for Logo and Heading "Calendar" */
 .top {
   display: flex;
   width: 100%;
@@ -30,6 +35,19 @@ body {
   justify-content: center;
 }
 
+/* CSS for Month and Year portion with control */
+.month,
+.year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 1vh;
+  background-image: url(control_bg.jpg);
+  text-align: center;
+  color: rgb(131, 201, 175);
+  padding: 40px 30px;
+}
 button {
   background: none;
   color: rgb(131, 201, 175);
@@ -37,39 +55,18 @@ button {
   padding: 10px;
 }
 
-
-.month , .year {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 1vw;
-  background-image: url(control_bg.jpg);
-  text-align: center;
-  color: rgb(131, 201, 175);
-  padding: 40px 30px;
-}
-h2 {
-  padding: 10px;
-}
-p {
-  font-size: 20px;
-}
+/* CSS for Lower portion Days and Dates wrapping for stop overflow*/
+.dates,
 .days {
-  display: flex;
-  color: black;
-  padding: 7px 0;
-  background-image: url(dates_bg.jpg);
-  color: antiquewhite;
-}
-.dates {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   padding: 10px 0;
   background-image: url(dates_bg.jpg);
-  color: white;
+  color: antiquewhite;
 }
+
+/* CSS for Days and Dates calculation for align equally from each other */
 .dates div,
 .days div {
   width: 14.28%;
@@ -78,32 +75,22 @@ p {
   cursor: pointer;
   margin-bottom: 10px;
 }
-.dates div:hover {
+
+/* CSS for Hover */
+button:hover {
+  background-color: rgb(131, 201, 175);
+  color: rgb(11, 2, 52);
+  cursor: pointer;
+  border-radius: 100%;
+  transition: all 1s ease;
+}
+.cells:hover {
   background-color: rgb(85, 134, 219);
   color: aliceblue;
   border-radius: 10px;
 }
-#month {
-  font-size: 30px;
-}
-.prev,
-.next {
-  display: flex;
-  justify-content: center;
-  width: 50px;
-  align-items: center;
-  height: 50px;
-  font-size: 35px;
-  font-weight: bolder;
-  transition: all 0.4s ease;
-}
 
-button:hover {
-  background-color: blue;
-  color: aliceblue;
-  cursor: pointer;
-  border-radius: 50px;
-}
+/* CSS for Current Date in Dates */
 .today {
   background-color: rgb(131, 201, 175);
   border: 2px solid silver;

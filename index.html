@@ -13,7 +13,7 @@
     <div class="container">
         <div class="calendar">
             <div class="top">
-                <img src="logo.png" alt="Logo" width="9%"">
+                <img src="logo.png" alt="Logo" width="9%">
                 <h3>&nbsp; Calendar</h3>
             </div>
             <div class=" screen">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="year">
                     <button class="prev" onclick="moveYear('prev')">&lt;</button>
-                    <p id="full_date"></p>
+                    <p id="year"></p>
                     <button class="next" onclick="moveYear('next')">&gt;</button>
                     <button class="jumptoday" onclick="jumptoday()">Today</button>
                 </div>
@@ -38,11 +38,12 @@
                 <div>Fri</div>
                 <div>Sat</div>
             </div>
+
+            <!-- Waiting for correct number of days in a month and cells with and today-->
             <div class="dates">
 
             </div>
         </div>
-
     </div>
 
     <script src="script.js"></script>

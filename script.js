@@ -2,11 +2,18 @@ let date = new Date();
 
 function renderDate() {
   date.setDate(date.getDate());
-  let day = date.getDay();
-  let endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  let prevdate = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+  let day = date.getDay() - 1; //day starts from Monday as 0 and Sunday as 6
+  let currMonthLastDate = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
+  let prevMonthLastDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    0
+  ).getDate();
   let today = new Date();
-
   const months = [
     "January",
     "February",
@@ -22,22 +29,30 @@ function renderDate() {
     "December",
   ];
 
-  document.getElementById("full_date").innerHTML = date.getFullYear();
+  //set month and year on calendar's screen
+  document.getElementById("year").innerHTML = date.getFullYear();
   document.getElementById("month").innerHTML = months[date.getMonth()];
 
   var cells = "";
-  for (x = day; x > 0; x--) {
-    cells += "<div class='pre-data'>" + (prevdate - x + 1) + "</div> ";
+  //getting past month data for filling first row of current month
+  for (let x = day; x > 0; x--) {
+    cells += "<div class='pre-data'>" + " " + "</div> ";
   }
 
-  for (i = 1; i <= endDate; i++) {
-    if (i == date.getDate() && date.getMonth() == date.getMonth()) {
-      cells += "<div class='today'>" + i + "</div> ";
+  //getting all dates and set today date and all other dates 
+  for (let i = 1; i <= currMonthLastDate; i++) {
+    if (
+      i == date.getDate() &&
+      date.getMonth() == today.getMonth() &&
+      date.getFullYear() == today.getFullYear()
+    ) {
+      cells += "<div class='today cells'>" + i + "</div> ";
     } else {
-      cells += "<div>" + i + "</div> ";
+      cells += "<div class='cells'>" + i + "</div> ";
     }
   }
 
+  //sending cells data to html
   document.getElementsByClassName("dates")[0].innerHTML = cells;
 }
 
@@ -62,7 +77,7 @@ function moveYear(args) {
 }
 
 function jumptoday() {
-  date =new Date();
+  date = new Date();
   date.setMonth(date.getMonth());
   renderDate();
 }
