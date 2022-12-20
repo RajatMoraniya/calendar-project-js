@@ -2,7 +2,7 @@ let date = new Date();
 
 function renderDate() {
   date.setDate(date.getDate());
-  let day = date.getDay() - 1; //day starts from Monday as 0 and Sunday as 6
+  let day = date.getDay() + 2; //day starts from Monday as 0 and Sunday as 6
   let currMonthLastDate = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
